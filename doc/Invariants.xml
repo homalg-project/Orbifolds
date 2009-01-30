@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+
+  Invariants.xml            Orbifolds package documentation            Mohamed Barakat
+
+         Copyright (C) 2009, Mohamed Barakat, Universität des Saarlandes
+
+-->
+
+<Chapter Label="Group_Invariants">
+<Heading>Invariants of Linear Group Actions</Heading>
+
+<Section Label="Group_Invariants:Operations">
+<Heading>Group Invariants: Operations and Functions</Heading>
+
+<#Include Label="GroupInvariants">
+
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>
