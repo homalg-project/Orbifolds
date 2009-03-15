@@ -16,7 +16,7 @@ clean:
 	(cd doc ; ./clean)
 
 test:	doc
-	gapL maketest.g
+	gapL -x 125 maketest.g
 
 archive: doc
 	(mkdir -p ../tar; cd ..; tar czvf tar/Orbifolds.tar.gz --exclude ".DS_Store" Orbifolds/doc/*.* Orbifolds/gap/*.{gi,gd} Orbifolds/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} Orbifolds/examples/*.g)
