@@ -6,6 +6,8 @@
 
 LoadPackage( "Orbifolds" );
 
+LoadPackage( "IO_ForHomalg" );
+
 HOMALG_IO.show_banners := false;
 
 LoadPackage( "GAPDoc" );

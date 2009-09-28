@@ -2,7 +2,7 @@
 ##
 ##  read.g                Orbifolds package                  Mohamed Barakat
 ##
-##  Copyright 2008, Mohamed Barakat, Universität des Saarlandes
+##  Copyright 2009, Mohamed Barakat, Universität des Saarlandes
 ##
 ##  Reading the implementation part of the Orbifolds package.
 ##
