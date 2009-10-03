@@ -16,10 +16,10 @@ test:	doc
 	gapL -x 125 maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/Orbifolds.tar.gz --exclude ".DS_Store" Orbifolds/doc/*.* Orbifolds/gap/*.{gi,gd} Orbifolds/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} Orbifolds/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/Orbifolds.tar.gz --exclude ".DS_Store" --exclude "*~" Orbifolds/doc/*.* Orbifolds/gap/*.{gi,gd} Orbifolds/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} Orbifolds/examples/*.g)
 
 WEBPOS=~/gap/pkg/Orbifolds/public_html
-WEBPOS_FINAL=~/Sites/Orbifolds
+WEBPOS_FINAL=~/Sites/homalg-project/Orbifolds
 
 towww: archive
 	echo '<?xml version="1.0" encoding="UTF-8"?>' >${WEBPOS}.version
