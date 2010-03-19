@@ -21,18 +21,18 @@ PackageName := "Orbifolds",
 
 ##  This may be used by a default banner or on a Web page, should fit on
 ##  one line.
-Subtitle := "A &homalg; based Package for Orbifold Cohomology Computations",
+Subtitle := "A homalg based Package for Orbifold Cohomology Computations",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2009.01.29",
+Version := "2009.01.30",
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "29/01/2009",
+Date := "30/01/2009",
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -42,7 +42,7 @@ Date := "29/01/2009",
 ##  directory containing the package (in our "example" probably:
 ##  example/init.g, ...    or  example-1.3/init.g, ...  )
 # 
-ArchiveURL := "http://wwwb.math.rwth-aachen.de/~barakat/Orbifolds",
+ArchiveURL := "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/Orbifolds/Orbifolds",
 
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
@@ -121,16 +121,15 @@ Persons := [
     FirstNames    := "Mohamed",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "barakat@math.uni-sb.de",
+    Email         := "barakat@mathematik.uni-kl.de",
     WWWHome       := "http://wwwb.math.rwth-aachen.de/~barakat/",
     PostalAddress := Concatenation( [
-                       "Mohamed Barakat\n",
-                       "Universität des Saarlandes\n",
-                       "Building E2 4\n",
-                       "66041 Saarbrücken\n",
+                       "Department of Mathematics\n",
+                       "University of Kaiserslautern\n",
+                       "67653 Kaiserslautern\n",
                        "Germany" ] ),
-    Place         := "Saarbrücken",
-    Institution   := "Universität des Saarlandes"
+    Place         := "Kaiserslautern",
+    Institution   := "University of Kaiserslautern"
   ),
 # provide such a record for each author and/or maintainer ...
   
@@ -166,9 +165,9 @@ Status := "dev",
 ##  and updating of the package in the GAP distribution.
 #
 README_URL := 
-  "http://wwwb.math.rwth-aachen.de/~barakat/gap/Orbifolds/README.Orbifolds",
+  "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/Orbifolds/README.Orbifolds",
 PackageInfoURL := 
-  "http://wwwb.math.rwth-aachen.de/~barakat/gap/Orbifolds/PackageInfo.g",
+  "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/Orbifolds/PackageInfo.g",
 
 ##  Here you  must provide a short abstract explaining the package content 
 ##  in HTML format (used on the package overview Web page) and an URL 
@@ -219,7 +218,7 @@ PackageDoc := rec(
   BookName  := "Orbifolds",
   # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
   Archive := 
-    "http://wwwb.math.rwth-aachen.de/~barakat/gap/Orbifolds/Orbifolds.tar.gz",
+    "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/Orbifolds/Orbifolds.tar.gz",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
@@ -228,7 +227,7 @@ PackageDoc := rec(
   # a longer title of the book, this together with the book name should
   # fit on a single text line (appears with the '?books' command in GAP)
   # LongTitle := "Elementary Divisors of Integer Matrices",
-  LongTitle := "A &homalg; based Package for Orbifold Cohomology Computations",
+  LongTitle := "A homalg based Package for Orbifold Cohomology Computations",
   # Should this help book be autoloaded when GAP starts up? This should
   # usually be 'true', otherwise say 'false'. 
   Autoload  := false

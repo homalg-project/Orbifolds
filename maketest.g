@@ -4,6 +4,8 @@
 ##  Call this with GAP.
 ##
 
+LoadPackage( "homalg" );
+
 LoadPackage( "Orbifolds" );
 
 LoadPackage( "IO_ForHomalg" );
@@ -18,9 +20,14 @@ list := [
          "../examples/OrbifoldV4TwistHochschild.g"
          ];
 
-TestManualExamples( "doc", "Orbifolds.xml", list );
+size := SizeScreen( );
+SizeScreen([125]);
 
-GAPDocManualLab("Orbifolds");
+TestManualExamples( DirectoriesPackageLibrary( "Orbifolds", "doc" )[1]![1], "Orbifolds.xml", list );
+
+GAPDocManualLab( "Orbifolds" );
+
+SizeScreen( size );
 
 quit;
 

@@ -4,6 +4,8 @@
 ##  Call this with GAP.
 ##
 
+LoadPackage( "homalg" );
+
 LoadPackage( "GAPDoc" );
 
 SetGapDocLaTeXOptions( "utf8" );

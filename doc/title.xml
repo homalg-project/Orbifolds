@@ -18,15 +18,15 @@
   <Version>Version <#Include SYSTEM "../VERSION"></Version>
   <Author>Mohamed Barakat<Alt Only="LaTeX"><Br/></Alt>
     <Address>
-      Universität des Saarlandes, <Br/>
-      66041 Saarbrücken, <Br/>
-      Building E2 4, <Br/>
+      Department of Mathematics, <Br/>
+      University of Kaiserslautern, <Br/>
+      67653 Kaiserslautern, <Br/>
       Germany
     </Address>
-    <Email>barakat@math.uni-sb.de</Email>
+    <Email>barakat@mathematik.uni-kl.de</Email>
     <Homepage>http://wwwb.math.rwth-aachen.de/&tilde;barakat/</Homepage>
   </Author>
-  <Date>January 2009</Date>
+  <Date>November 2009</Date>
   
   <Copyright>
     &copyright; 2009 by Mohamed Barakat <P/>
