@@ -5,8 +5,7 @@ doc: doc/manual.six
 doc/manual.six: makedoc.g maketest.g \
 		PackageInfo.g VERSION \
 		doc/Orbifolds.bib doc/*.xml \
-		gap/*.gd gap/*.gi \
-		examples/*
+		gap/*.gd gap/*.gi examples/*.g
 	        gap makedoc.g
 
 clean:
