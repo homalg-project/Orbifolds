@@ -29,6 +29,9 @@ towww: archive
 	cp README ${WEBPOS}/README.Orbifolds
 	cp doc/manual.pdf ${WEBPOS}/Orbifolds.pdf
 	cp doc/*.{css,html} ${WEBPOS}
+	rm -f ${WEBPOS}/*.tar.gz
+	mv ../tar/Orbifolds.tar.gz ${WEBPOS}/Orbifolds-`cat VERSION`.tar.gz
+	rm -f ${WEBPOS_FINAL}/*.tar.gz
 	cp ${WEBPOS}/* ${WEBPOS_FINAL}
-	cp ../tar/Orbifolds.tar.gz ${WEBPOS}
+	ln -s Orbifolds-`cat VERSION`.tar.gz ${WEBPOS_FINAL}/Orbifolds.tar.gz
 
