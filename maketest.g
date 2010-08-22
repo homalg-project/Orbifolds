@@ -4,7 +4,7 @@
 ##  Call this with GAP.
 ##
 
-LoadPackage( "homalg" );
+LoadPackage( "Modules" );
 
 LoadPackage( "Orbifolds" );
 
