@@ -26,15 +26,15 @@
 ##  gap> gens := GeneratorsOfMagmaWithInverses( V4 );
 ##  [ [ [ -1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, -1 ] ], [ [ -1, 0, 0 ], [ 0, -1, 0 ], [ 0, 0, 1 ] ] ]
 ##  gap> a := HomalgMatrix( gens[1], QQ );
-##  <A homalg external 3 by 3 matrix>
+##  <A 3 x 3 matrix over an external ring>
 ##  gap> b := HomalgMatrix( gens[2], QQ );
-##  <A homalg external 3 by 3 matrix>
+##  <A 3 x 3 matrix over an external ring>
 ##  gap> c := a * b;
-##  <An unevaluated homalg external 3 by 3 matrix>
+##  <An unevaluated 3 x 3 matrix over an external ring>
 ##  gap> xyz := HomalgMatrix( "[ x, y, z ]", 3, 1, Re );
-##  <A homalg external 3 by 1 matrix>
+##  <A 3 x 1 matrix over an external ring>
 ##  gap> XYZ := HomalgMatrix( "[ X, Y, Z ]", 3, 1, Re );
-##  <A homalg external 3 by 1 matrix>
+##  <A 3 x 1 matrix over an external ring>
 ##  ]]></Example>
 ##  Define <M>R</M> as a module over its double <M>R^e</M>:
 ##  <Example><![CDATA[
