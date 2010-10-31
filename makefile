@@ -17,7 +17,7 @@ test:	doc
 archive: test
 	(mkdir -p ../tar; cd ..; tar czvf tar/Orbifolds.tar.gz --exclude ".DS_Store" --exclude "*~" Orbifolds/doc/*.* Orbifolds/doc/clean Orbifolds/gap/*.{gi,gd} Orbifolds/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} Orbifolds/examples/*.g)
 
-WEBPOS=~/software/pkg/Orbifolds/public_html
+WEBPOS=public_html
 WEBPOS_FINAL=~/Sites/homalg-project/Orbifolds
 
 towww: archive
