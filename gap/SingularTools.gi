@@ -37,5 +37,6 @@ InstallValue( OrbifoldsHomalgTableForSingularTools,
         )
  );
 
-## enrich the global homalg table for Singular:
-AddToAhomalgTable( CommonHomalgTableForSingularTools, OrbifoldsHomalgTableForSingularTools );
+## enrich the global and the created homalg tables for Singular:
+AppendToAhomalgTable( CommonHomalgTableForSingularTools, OrbifoldsHomalgTableForSingularTools );
+AppendTohomalgTablesOfCreatedExternalRings( OrbifoldsHomalgTableForSingularTools, IsHomalgExternalRingInSingularRep );

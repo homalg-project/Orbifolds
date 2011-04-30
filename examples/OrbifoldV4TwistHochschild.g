@@ -174,7 +174,7 @@
 ##  </Section>
 ##  <#/GAPDoc>
 
-LoadPackage( "Orbifolds" );
+LoadPackage( "RingsForHomalg" );
 
 QQ := HomalgFieldOfRationalsInDefaultCAS( );
 R := QQ * "x,y,z";
@@ -237,3 +237,6 @@ HHRRb := Ext( R1, Rb );
 
 HHRRc := Ext( R1, Rc );
 
+LoadPackage( "Orbifolds" );
+
+ViewObj( GroupInvariants( V4, R ) ); Print( "\n" );
