@@ -42,7 +42,7 @@
 ##  gap> R1 := LeftPresentation( R1 );
 ##  <A cyclic left module presented by 3 relations for a cyclic generator>
 ##  gap> Display( R1 );
-##  Q[x,y,z,X,Y,Z]/< x-X, y-Y, z-Z >
+##  Q[x,y,z][X,Y,Z]/< x-X, y-Y, z-Z >
 ##  ]]></Example>
 ##  Express the <M>V_4</M> over <A>Re</A>:
 ##  <Example><![CDATA[
@@ -57,7 +57,7 @@
 ##  gap> Ra := LeftPresentation( Ra );
 ##  <A cyclic left module presented by 3 relations for a cyclic generator>
 ##  gap> Display( Ra );
-##  Q[x,y,z,X,Y,Z]/< x+X, y-Y, z+Z >
+##  Q[x,y,z][X,Y,Z]/< x+X, y-Y, z+Z >
 ##  ]]></Example>
 ##  The module <M>Rb</M>:
 ##  <Example><![CDATA[
@@ -65,7 +65,7 @@
 ##  gap> Rb := LeftPresentation( Rb );
 ##  <A cyclic left module presented by 3 relations for a cyclic generator>
 ##  gap> Display( Rb );
-##  Q[x,y,z,X,Y,Z]/< x+X, y+Y, z-Z >
+##  Q[x,y,z][X,Y,Z]/< x+X, y+Y, z-Z >
 ##  ]]></Example>
 ##  The module <M>Rb</M>:
 ##  <Example><![CDATA[
@@ -73,7 +73,7 @@
 ##  gap> Rc := LeftPresentation( Rc );
 ##  <A cyclic left module presented by 3 relations for a cyclic generator>
 ##  gap> Display( Rc );
-##  Q[x,y,z,X,Y,Z]/< x-X, y+Y, z+Z >
+##  Q[x,y,z][X,Y,Z]/< x-X, y+Y, z+Z >
 ##  ]]></Example>
 ##  The Hochschild cohomologies <M>HH^*(R,R\sigma)</M>, <M>\sigma \in V_4</M>. <Br/><Br/>
 ##  <M>HH^*(R,R)</M>:
@@ -83,7 +83,7 @@
 ##  gap> Display( HHRR1 );
 ##  ---------------------------
 ##  at cohomology degree: 0
-##  Q[x,y,z,X,Y,Z]/< z-Z, y-Y, x-X >
+##  Q[x,y,z][X,Y,Z]/< z-Z, y-Y, x-X >
 ##  ---------------------------
 ##  at cohomology degree: 1
 ##  z-Z,0,  0,  y-Y,0,  0,  x-X,0,  0, 
@@ -91,7 +91,7 @@
 ##  0,  0,  z-Z,0,  0,  y-Y,0,  0,  x-X
 ##  Cokernel of the map
 ##  
-##  R^(9x1) --> R^(3x1), ( for R := Q[x,y,z,X,Y,Z] )
+##  R^(9x1) --> R^(3x1), ( for R := Q[x,y,z][X,Y,Z] )
 ##  
 ##  currently represented by the above matrix
 ##  ---------------------------
@@ -101,12 +101,12 @@
 ##  0,  0,  z-Z,0,  0,  y-Y,0,  0,  x-X
 ##  Cokernel of the map
 ##  
-##  R^(9x1) --> R^(3x1), ( for R := Q[x,y,z,X,Y,Z] )
+##  R^(9x1) --> R^(3x1), ( for R := Q[x,y,z][X,Y,Z] )
 ##  
 ##  currently represented by the above matrix
 ##  ---------------------------
 ##  at cohomology degree: 3
-##  Q[x,y,z,X,Y,Z]/< z-Z, y-Y, x-X >
+##  Q[x,y,z][X,Y,Z]/< z-Z, y-Y, x-X >
 ##  ---------------------------
 ##  ]]></Log>
 ##  <M>HH^*(R,Ra)</M>:
@@ -122,10 +122,10 @@
 ##  0
 ##  ---------------------------
 ##  at cohomology degree: 2
-##  Q[x,y,z,X,Y,Z]/< Z, X, z, y-Y, x >
+##  Q[x,y,z][X,Y,Z]/< Z, X, z, y-Y, x >
 ##  ---------------------------
 ##  at cohomology degree: 3
-##  Q[x,y,z,X,Y,Z]/< Z, X, z, y-Y, x >
+##  Q[x,y,z][X,Y,Z]/< Z, X, z, y-Y, x >
 ##  ---------------------------
 ##  ]]></Log>
 ##  <M>HH^*(R,Rb)</M>:
@@ -141,10 +141,10 @@
 ##  0
 ##  ---------------------------
 ##  at cohomology degree: 2
-##  Q[x,y,z,X,Y,Z]/< Y, X, z-Z, y, x >
+##  Q[x,y,z][X,Y,Z]/< Y, X, z-Z, y, x >
 ##  ---------------------------
 ##  at cohomology degree: 3
-##  Q[x,y,z,X,Y,Z]/< Y, X, z-Z, y, x >
+##  Q[x,y,z][X,Y,Z]/< Y, X, z-Z, y, x >
 ##  ---------------------------
 ##  ]]></Log>
 ##  <M>HH^*(R,Rc)</M>:
@@ -160,10 +160,10 @@
 ##  0
 ##  ---------------------------
 ##  at cohomology degree: 2
-##  Q[x,y,z,X,Y,Z]/< Z, Y, z, y, x-X >
+##  Q[x,y,z][X,Y,Z]/< Z, Y, z, y, x-X >
 ##  ---------------------------
 ##  at cohomology degree: 3
-##  Q[x,y,z,X,Y,Z]/< Z, Y, z, y, x-X >
+##  Q[x,y,z][X,Y,Z]/< Z, Y, z, y, x-X >
 ##  ---------------------------
 ##  ]]></Log>
 ##  <M>HH^*(R,R)^{V_4}\cong R^{V_4}</M>:
@@ -206,6 +206,9 @@ c := a * b;
 
 xyz := HomalgMatrix( "[ x, y, z ]", 3, 1, Re );
 XYZ := HomalgMatrix( "[ X, Y, Z ]", 3, 1, Re );
+
+
+LoadPackage( "Modules" );
 
 ## the twisted modules:
 R1 := xyz - XYZ;
