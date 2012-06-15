@@ -169,7 +169,7 @@
 ##  <M>HH^*(R,R)^{V_4}\cong R^{V_4}</M>:
 ##  <Example><![CDATA[
 ##  gap> GroupInvariants( V4, R );
-##  [ [ z^2, y^2, x^2 ], [ 1, x*y*z ] ]
+##  [ [ z^2, y^2, x^2 ], [ 1, x*y*z ], [ x*y*z ] ]
 ##  ]]></Example>
 ##  </Section>
 ##  <#/GAPDoc>

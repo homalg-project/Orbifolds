@@ -243,10 +243,16 @@ Dependencies := rec(
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
-  NeededOtherPackages := [ [ "MatricesForHomalg", ">= 2011.04.28" ], [ "HomalgToCAS", ">= 2011.04.28" ], [ "RingsForHomalg", ">= 2010.02.23" ] ],
+  NeededOtherPackages := [
+                      [ "GradedModules", ">= 2012.06.13" ],
+                      [ "Modules", ">= 2011.08.26" ],
+                      [ "MatricesForHomalg", ">= 2011.04.28" ],
+                      [ "HomalgToCAS", ">= 2011.04.28" ],
+                      [ "RingsForHomalg", ">= 2010.02.23" ],
+                      [ "GAPDoc", ">= 1.0" ] ],
   # without these the package will issue a warning while loading
   # SuggestedOtherPackages := [],
-  SuggestedOtherPackages := [ [ "GAPDoc", ">= 1.0" ] ],
+  SuggestedOtherPackages := [ ],
   # needed external conditions (programs, operating system, ...)  provide 
   # just strings as text or
   # pairs [text, URL] where URL  provides further information
@@ -301,7 +307,7 @@ Autoload := false,
 ##  *Optional*: Here you can list some keyword related to the topic 
 ##  of the package.
 # Keywords := ["Smith normal form", "p-adic", "rational matrix inversion"]
-Keywords := ["homological", "ext", "tor"]
+Keywords := ["group invariants", "invariant ring", "orbifolds"]
 
 ));
 

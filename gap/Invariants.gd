@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  Modules.gd                  Orbifolds package            Mohamed Barakat
+##  Invariants.gd                                          Orbifolds package
 ##
-##  Copyright 2008-2009, Mohamed Barakat, Universität des Saarlandes
+##  Copyright 2008-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declarations of procedures for modules.
+##  Declarations of procedures for group invariants.
 ##
 #############################################################################
 
@@ -19,3 +19,5 @@
 DeclareOperation( "GroupInvariants",
         [ IsMatrixGroup, IsHomalgRing ] );
 
+DeclareOperation( "InvariantRing",
+        [ IsMatrixGroup, IsHomalgRing ] );

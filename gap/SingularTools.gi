@@ -17,7 +17,11 @@
 InstallValue( OrbifoldsHomalgTableForSingularTools,
         
         rec(
-               GroupInvariants :=
+            _CAS_name := "Singular",
+            
+            _Identifier := "Orbifolds",
+            
+            GroupInvariants :=
                  function( group_gens )
                    local R, P, S, IS;
                    

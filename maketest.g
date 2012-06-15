@@ -14,11 +14,7 @@ HOMALG_IO.show_banners := false;
 
 LoadPackage( "GAPDoc" );
 
-list := [
-         "../gap/Invariants.gd",
-         "../gap/Invariants.gi",
-         "../examples/OrbifoldV4TwistHochschild.g"
-         ];
+Read( "ListOfDocFiles.g" );
 
 size := SizeScreen( );
 SizeScreen([125]);

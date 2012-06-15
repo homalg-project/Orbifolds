@@ -13,11 +13,7 @@ SetGapDocLaTeXOptions( "utf8" );
 bib := ParseBibFiles( "doc/Orbifolds.bib" );
 WriteBibXMLextFile( "doc/OrbifoldsBib.xml", bib );
 
-list := [
-         "../gap/Invariants.gd",
-         "../gap/Invariants.gi",
-         "../examples/OrbifoldV4TwistHochschild.g"
-         ];
+Read( "ListOfDocFiles.g" );
 
 MakeGAPDocDoc( "doc", "Orbifolds", list, "Orbifolds" );
 
