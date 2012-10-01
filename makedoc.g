@@ -15,9 +15,11 @@ WriteBibXMLextFile( "doc/OrbifoldsBib.xml", bib );
 
 Read( "ListOfDocFiles.g" );
 
+PrintTo( "VERSION", PackageInfo( "Orbifolds" )[1].Version );
+
 MakeGAPDocDoc( "doc", "Orbifolds", list, "Orbifolds" );
 
 GAPDocManualLab("Orbifolds");
 
-quit;
+QUIT;
 
