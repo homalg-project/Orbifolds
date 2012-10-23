@@ -26,13 +26,20 @@ Subtitle := "A homalg based Package for Orbifold Cohomology Computations",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2011.04.28",
+Version := Maximum( [
+  "2012.10.22", ## Mohamed's version
+## this line prevents merge conflicts
+  "2012.10.22", ## Simon's version
+## this line prevents merge conflicts
+  "2012.10.12", ## Sebas' version
+] ),
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "28/04/2011",
+Date := ~.Version{[ 1 .. 10 ]},
+Date := Concatenation( ~.Date{[ 9, 10 ]}, "/", ~.Date{[ 6, 7 ]}, "/", ~.Date{[ 1 .. 4 ]} ),
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -130,6 +137,39 @@ Persons := [
                        "Germany" ] ),
     Place         := "Kaiserslautern",
     Institution   := "University of Kaiserslautern"
+  ),
+  rec(
+    LastName      := "Gutsche",
+    FirstNames    := "Sebastian",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "gutsche@momo.math.rwth-aachen.de",
+    WWWHome       := "http://wwwb.math.rwth-aachen.de/~gutsche/",
+    PostalAddress := Concatenation( [
+                       "Sebastian Gutsche\n",
+                       "Lehrstuhl B fuer Mathematik, RWTH Aachen\n",
+                       "Templergraben 64\n",
+                       "52062 Aachen\n",
+                       "Germany" ] ),
+    Place         := "Aachen",
+    Institution   := "RWTH Aachen University"
+  ),
+  rec(
+    LastName      := "Keicher",
+    FirstNames    := "Simon",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "keicher@mail.mathematik.uni-tuebingen.de",
+    WWWHome       := "http://www.mathematik.uni-tuebingen.de/~keicher/",
+    PostalAddress := Concatenation( [
+                       "Simon Keicher\n",
+                       "Universität Tübingen\n",
+                       "Mathematisches Institut\n",
+                       "Auf der Morgenstelle 10\n",
+                       "72076 Tübingen\n",
+                       "Germany" ] ),
+    Place         := "Tübingen",
+    Institution   := "Universität Tübingen"
   ),
 # provide such a record for each author and/or maintainer ...
   
@@ -244,6 +284,7 @@ Dependencies := rec(
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
   NeededOtherPackages := [
+                      [ "Convex", ">= 2012.10.22" ],
                       [ "GradedModules", ">= 2012.06.13" ],
                       [ "Modules", ">= 2011.08.26" ],
                       [ "MatricesForHomalg", ">= 2011.04.28" ],
@@ -285,10 +326,10 @@ BannerString := Concatenation(
   "Loading  Orbifolds ", ~.Version, "\n",
   "by ", ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName,
         " (", ~.Persons[1].WWWHome, ")\n",
-#  "   ", ~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,
-#        " (", ~.Persons[2].WWWHome, ")\n",
-#  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
-#        " (", ~.Persons[3].WWWHome, ")\n",
+  "   ", ~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,
+        " (", ~.Persons[2].WWWHome, ")\n",
+  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
+        " (", ~.Persons[3].WWWHome, ")\n",
   "Type:\n",
   "  ?Orbifolds:                   ## for the contents of the manual\n",
   "  ?Orbifolds:x                  ## for chapter/section/topic x\n",

@@ -15,6 +15,9 @@ ReadPackage( "Orbifolds", "gap/Orbifolds.gi" );
 ReadPackage( "Orbifolds", "gap/Invariants.gi" );
 
 ##
+ReadPackage( "Orbifolds", "gap/GIT-fan.gi" );
+
+##
 ReadPackage( "Orbifolds", "gap/SingularTools.gi" );
 
 
