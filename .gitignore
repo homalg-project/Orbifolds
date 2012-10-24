@@ -29,3 +29,10 @@ doc/*.toc
 doc/*.out
 doc/manual.lab
 *.DS_Store
+doc/AutoDocMainFile.xml
+doc/GIT-fans.xml
+doc/GIT-fansSectionGIT-cone.xml
+doc/GIT-fansSectionGIT-fan.xml
+doc/GIT-fansSectionOrbit_cones.xml
+doc/GIT-fansSectiona-faces.xml
+gap/AutoDocEntries.g
