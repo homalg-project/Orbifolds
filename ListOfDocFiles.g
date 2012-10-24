@@ -4,4 +4,5 @@ list := [
          "../examples/OrbifoldV4TwistHochschild.g",
          "../examples/doc/GroupInvariants.g",
          "../examples/doc/InvariantRing.g",
+         "../gap/AutoDocEntries.g",
          ];

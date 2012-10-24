@@ -6,6 +6,7 @@ doc/manual.six: makedoc.g maketest.g ListOfDocFiles.g \
 		PackageInfo.g \
 		doc/Orbifolds.bib doc/*.xml \
 		gap/*.gd gap/*.gi examples/*.g
+		gap createautodoc.g
 	        gap makedoc.g
 
 clean:
