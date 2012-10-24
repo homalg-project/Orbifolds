@@ -162,3 +162,90 @@ InstallMethod( GIT_Cone,
     return Intersect( cones );
     
 end );
+
+##
+InstallMethod( GIT_Fan,
+        "for a homogeneous ideal and a weight list",
+        [ IsGradedSubmoduleRep and ConstructedAsAnIdeal ],
+        
+  function( a )
+    local R, r, Q, Qgamma, rank, cones, w, lambda0, facets_normals, v, eta, inner_facets, mu, Lambda, w_neighbor, lambda, pos;
+    
+    R := HomalgRing( a );
+    
+    r := KrullDimension( R );
+    
+    Q := WeightsOfIndeterminates( R );
+    
+    Q := List( Q, UnderlyingListOfRingElements );
+    
+    Qgamma := Cone( Q );
+    
+    SetContainingGrid( Qgamma, DegreeGroup( R ) );
+    
+    rank := RankMat( Q );
+    
+    if rank <> Length( Q[1] ) then
+        Error( "matrix of weights not of full rank\n" );
+    elif not Is_aFace( [ 1 .. r ], a ) then
+        Error( "the big torus does not meet the vanishing set of the ideal\n" );
+    fi;
+    
+    cones := OrbitCones( a );
+    
+    repeat
+        w := [ List( RandomMat( 1, r, Integers )[1], i -> AbsInt( i ) + 1 ) ]  * Q;
+        w := w[1];
+        lambda0 := GIT_Cone( a, w );
+    until Dimension( lambda0 ) = rank;
+    
+    facets_normals := DefiningInequalities( lambda0 );
+    
+    inner_facets := [ ];
+    
+    for v in facets_normals do
+        eta := ConeByEqualitiesAndInequalities( [ v ], facets_normals );
+        w := RelativeInteriorRayGenerator( eta );
+        if ContainedInRelativeInterior( w, Qgamma ) then
+            Add( inner_facets, [ w, -v ] );
+        fi;
+    od;
+    
+    mu := 100;
+    
+    Lambda := [ lambda0 ];
+    
+    while inner_facets <> [ ] do
+        Info( InfoOrbifolds, 2, "Length( inner_facets ) = ", Length( inner_facets ) );
+        w := Remove( inner_facets, 1 );
+        v := w[2];
+        w := w[1];
+        
+        repeat
+            w_neighbor := mu * w + v;
+            lambda := GIT_Cone( a, w_neighbor );
+            mu := mu * 2;
+        until Dimension( lambda ) = rank and w in lambda;
+        
+        Add( Lambda, lambda );
+        
+        facets_normals := DefiningInequalities( lambda );
+        
+        for v in facets_normals do
+            eta := ConeByEqualitiesAndInequalities( [ v ], facets_normals );
+            w := RelativeInteriorRayGenerator( eta );
+            pos := First( [ 1 .. Length( inner_facets ) ], i ->  w * inner_facets[i][2] = 0 );
+            if ContainedInRelativeInterior( w, Qgamma ) then
+                if pos <> fail then
+                    Remove( inner_facets, pos );
+                else
+                    Add( inner_facets, [ w, -v ] );
+                fi;
+            fi;
+        od;
+        
+    od;
+    
+    return Fan( Lambda );
+    
+end );
