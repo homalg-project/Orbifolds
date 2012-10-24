@@ -25,6 +25,13 @@ DeclareOperationWithDocumentation( "Is_aFace",
         "gamma_0, a",
         [ "GIT-fans", "a-faces" ] );
 
+DeclareAttributeWithDocumentation( "aFaces",
+        IsHomalgModule,
+        [ "Compute the torus orbits intersecting the vanishing set of <A>a</A>" ],
+        "a list of lists of indices",
+        "a",
+        [ "GIT-fans", "a-faces" ] );
+
 DeclareOperationWithDocumentation( "aFaces",
         [ IsHomalgModule, IsInt ],
         [ "Compute the torus orbits of dimension <A>i</A> intersecting the vanishing set of <A>a</A>" ],
@@ -32,25 +39,18 @@ DeclareOperationWithDocumentation( "aFaces",
         "a,i",
         [ "GIT-fans", "a-faces" ] );
 
-DeclareOperationWithDocumentation( "aFaces",
-        [ IsHomalgModule ],
-        [ "Compute the torus orbits intersecting the vanishing set of <A>a</A>" ],
-        "a list of lists of indices",
+DeclareAttributeWithDocumentation( "OrbitCones",
+        IsHomalgGradedModule,
+        [ "Compute the full dimensional orbit cones of the homogeneous ideal <A>a</A>" ],
+        "a list of cones",
         "a",
-        [ "GIT-fans", "a-faces" ] );
+        [ "GIT-fans", "Orbit_cones" ] );
 
 DeclareOperationWithDocumentation( "OrbitCones",
         [ IsHomalgGradedModule, IsInt ],
         [ "Compute the orbit cones of the homogeneous ideal <A>a</A>" ],
         "a list of cones",
         "a,i",
-        [ "GIT-fans", "Orbit_cones" ] );
-
-DeclareOperationWithDocumentation( "OrbitCones",
-        [ IsHomalgGradedModule ],
-        [ "Compute the full dimensional orbit cones of the homogeneous ideal <A>a</A>" ],
-        "a list of cones",
-        "a",
         [ "GIT-fans", "Orbit_cones" ] );
 
 DeclareOperationWithDocumentation( "GIT_Cone",
@@ -60,8 +60,15 @@ DeclareOperationWithDocumentation( "GIT_Cone",
         "a, w",
         [ "GIT-fans", "GIT-cone" ] );
 
-DeclareOperationWithDocumentation( "GIT_Fan",
-        [ IsHomalgGradedModule ],
+DeclareOperationWithDocumentation( "GIT_Cone",
+        [ IsHomalgGradedModule, IsHomalgModuleElement ],
+        [ "Compute the GIT cone of the given vector <A>w</A> w.r.t. the homogeneous ideal <A>a</A>" ],
+        "a cone",
+        "a, w",
+        [ "GIT-fans", "GIT-cone" ] );
+
+DeclareAttributeWithDocumentation( "GIT_Fan",
+        IsHomalgGradedModule,
         [ "Compute the GIT fan of the vanishing set of the homogeneous ideal <A>a</A>",
           "under the action of the of the torus corresponding to the grading of the the underlying ring" ],
         "a fan",

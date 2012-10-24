@@ -27,7 +27,7 @@ Subtitle := "A homalg based Package for Orbifold Cohomology Computations",
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
 Version := Maximum( [
-  "2012.10.22", ## Mohamed's version
+  "2012.10.23", ## Mohamed's version
 ## this line prevents merge conflicts
   "2012.10.22", ## Simon's version
 ## this line prevents merge conflicts
@@ -284,9 +284,9 @@ Dependencies := rec(
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
   NeededOtherPackages := [
-                      [ "Convex", ">= 2012.10.22" ],
-                      [ "GradedModules", ">= 2012.06.13" ],
-                      [ "Modules", ">= 2011.08.26" ],
+                      [ "Convex", ">= 2012.10.23" ],
+                      [ "GradedModules", ">= 2012.10.23" ],
+                      [ "Modules", ">= 2012.10.23" ],
                       [ "MatricesForHomalg", ">= 2011.04.28" ],
                       [ "HomalgToCAS", ">= 2011.04.28" ],
                       [ "RingsForHomalg", ">= 2010.02.23" ],

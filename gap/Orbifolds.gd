@@ -8,6 +8,10 @@
 ##
 #############################################################################
 
+# our info classes:
+DeclareInfoClass( "InfoOrbifolds" );
+SetInfoLevel( InfoOrbifolds, 1 );
+
 ####################################
 #
 # global functions and operations:

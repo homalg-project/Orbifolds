@@ -18,7 +18,7 @@
 
 ##
 InstallMethod( Is_aFace,
-        "for homalg matrices",
+        "for a face and an ideal",
         [ IsList, IsHomalgModule and ConstructedAsAnIdeal ],
         
   function( gamma_0, a )
@@ -57,7 +57,7 @@ end );
 
 ##
 InstallMethod( aFaces,
-        "for homalg matrices",
+        "for an ideal and an integer",
         [ IsHomalgModule and ConstructedAsAnIdeal, IsInt ],
         
   function( a, i )
@@ -73,7 +73,7 @@ end );
 
 ##
 InstallMethod( aFaces,
-        "for homalg matrices",
+        "for an ideal",
         [ IsHomalgModule and ConstructedAsAnIdeal ],
         
   function( a )
@@ -87,7 +87,7 @@ end );
 
 ##
 InstallMethod( OrbitCones,
-        "for homalg matrices",
+        "for a homogeneous ideal and an integer",
         [ IsGradedSubmoduleRep and ConstructedAsAnIdeal, IsInt ],
         
   function( a, i )
@@ -98,7 +98,7 @@ InstallMethod( OrbitCones,
     Q := WeightsOfIndeterminates( R );
 
     Q := List( Q, UnderlyingListOfRingElements );
-
+    
     r := Length( Indeterminates( R ) );
     
     afaces := Concatenation( List( [ i .. r ], j -> aFaces( a, j ) ) );
@@ -117,6 +117,48 @@ InstallMethod( OrbitCones,
     
     cones := DuplicateFreeList( cones );
     
+    if i = RankMat( Q ) then
+        SetOrbitCones( a, cones );
+    fi;
+    
     return cones;
+    
+end );
+
+##
+InstallMethod( OrbitCones,
+        "for a homogeneous ideal",
+        [ IsGradedSubmoduleRep and ConstructedAsAnIdeal ],
+        
+  function( a )
+    local R, Q;
+    
+    R := HomalgRing( a );
+    
+    Q := WeightsOfIndeterminates( R );
+
+    Q := List( Q, UnderlyingListOfRingElements );
+
+    return OrbitCones( a, RankMat( Q ) );
+    
+end );
+
+##
+InstallMethod( GIT_Cone,
+        "for a homogeneous ideal and a weight list",
+        [ IsGradedSubmoduleRep and ConstructedAsAnIdeal, IsList ],
+        
+  function( a, w )
+    local cones;
+    
+    cones := OrbitCones( a );
+    
+    cones := Filtered( cones, omega -> w in omega );
+    
+    if cones = [ ] then
+        Error( "w (the second argument) must in contained in the cone spanned by the weights\n" );
+    fi;
+    
+    return Intersect( cones );
     
 end );

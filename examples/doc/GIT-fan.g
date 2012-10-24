@@ -10,6 +10,13 @@
 ##  true
 ##  gap> Is_aFace( [ 7, 8 ], a );
 ##  false
+##  gap> Length( OrbitCones( a, 3 ) );
+##  72
+##  gap> w := [ 0, 0, 2 ];
+##  [ 0, 0, 2 ]
+##  gap> lambda := GIT_Cone( a, w );
+##  <A cone in |R^3>
+##  gap> #DrawObject( lambda );
 
 ##  ]]></Example>
 ##  <#/GAPDoc>
@@ -27,3 +34,7 @@ Assert( 0, Is_aFace( [ 1 .. 8 ], a ) );
 Assert( 0, not Is_aFace( [ 7, 8 ], a ) );
 Assert( 0, Length( OrbitCones( a, 3 ) ) = 72 );
 
+w := [ 0, 0, 2 ];
+lambda := GIT_Cone( a, w );
+
+Assert( 0, Length( RayGenerators( lambda ) ) = 8 );
