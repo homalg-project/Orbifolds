@@ -23,7 +23,7 @@ DeclareOperationWithDocumentation( "Is_aFace",
         [ "check if the torus orbit corresponding to <A>gamma_0</A> meets the vanishing set of the ideal <A>a</A>" ],
         "<C>true</C> or <C>false</C>",
         "gamma_0, a",
-        [ "GIT-fans", "" ] );
+        [ "GIT-fans", "a-faces" ] );
 
 DeclareOperationWithDocumentation( "aFaces",
         [ IsHomalgModule, IsInt ],

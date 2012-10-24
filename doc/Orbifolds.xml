@@ -60,6 +60,7 @@
 <#Include SYSTEM "install.xml">
 <#Include SYSTEM "QuickStart.xml">
 <#Include SYSTEM "Invariants.xml">
+<#Include SYSTEM "AutoDocMainFile.xml">
 <#Include SYSTEM "examples.xml">
 </Body>
 
