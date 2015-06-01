@@ -206,7 +206,7 @@ InstallMethod( GIT_Fan,
     for v in facets_normals do
         eta := ConeByEqualitiesAndInequalities( [ v ], facets_normals );
         w := RelativeInteriorRayGenerator( eta );
-        if ContainedInRelativeInterior( w, Qgamma ) then
+        if RayGeneratorContainedInRelativeInterior( w, Qgamma ) then
             Add( inner_facets, [ w, -v ] );
         fi;
     od;
@@ -235,7 +235,7 @@ InstallMethod( GIT_Fan,
             eta := ConeByEqualitiesAndInequalities( [ v ], facets_normals );
             w := RelativeInteriorRayGenerator( eta );
             pos := First( [ 1 .. Length( inner_facets ) ], i ->  w * inner_facets[i][2] = 0 );
-            if ContainedInRelativeInterior( w, Qgamma ) then
+            if RayGeneratorContainedInRelativeInterior( w, Qgamma ) then
                 if pos <> fail then
                     Remove( inner_facets, pos );
                 else
